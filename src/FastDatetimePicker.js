@@ -89,8 +89,8 @@ const DEFAULT_CONFIG = {
   endDate: null,
   hourRow: '{value}',
   minuteRow: '{value}',
-  format: 'YYYY/MM/DD',
-  startValue: NOW.getFullYear() + '-' + (NOW.getMonth() + 1) + '-' + NOW.getDate(),
+  format: 'YYYY/MM/DD HH:mm',
+  startValue: `${NOW.getFullYear()}/${NOW.getMonth()+1}/${ NOW.getDate()}`,
   endValue:'',
   onSelect () {},
   onConfirm () {},
@@ -116,7 +116,7 @@ function renderScroller (container, data, value, callback) {
 }
 
 function showMask () {
-  let _mask = document.querySelector('.vux-popup-mask')
+  let _mask = document.querySelector('.fd-mask')
   if(_mask){
     _mask.style.zIndex = 900;
   }
@@ -127,7 +127,11 @@ function showMask () {
 
     MASK.addEventListener('click', function () {
       CURRENT_PICKER && CURRENT_PICKER.hide()
-    }, false)
+    }, false);
+
+    MASK.addEventListener('touchmove', function (e) {
+      e.preventDefault()
+    }, false);
   }
 
   MASK.style.display = 'block'
@@ -138,22 +142,22 @@ function showMask () {
 }
 
 function hideMask () {
-  let _mask = document.querySelector('.vux-popup-mask')
+  let _mask = document.querySelector('.fd-mask');
   if(_mask){
     _mask.style.zIndex = -1;
   }
   if (!MASK) {
-    return
+    return;
   }
 
-  MASK.style.opacity = 0
+  MASK.style.opacity = 0;
 
   setTimeout(function () {
     MASK && (MASK.style.display = 'none')
   }, SHOW_ANIMATION_TIME);
 }
 
-function FastDatetimePicker (config) {
+function FastDateTime (config) {
   const self = this;
   self.config = {};
   self.startValue = config.startValue || '';
@@ -181,20 +185,11 @@ function FastDatetimePicker (config) {
     this.config.endTime = delayDays(this.config.endDate,1/12);
   }
 
-  let trigger = self.config.trigger;
-
-  this.triggerHandler = function (e) {
-    e.preventDefault();
-    self.show(self.startValue,self.endValue);
-  };
-  if (trigger) {
-    trigger = self.trigger = getElement(trigger);
-    this.trigger = trigger;
-    this.trigger.addEventListener('click', this.triggerHandler, false);
-  }
+  if('string' === typeof config.confirmText) this.config.confirmText = config.confirmText;
+  if('string' === typeof config.cancelText) this.config.confirmText = config.cancelText;
 }
 
-FastDatetimePicker.prototype = {
+FastDateTime.prototype = {
   _show (startValue,endValue) {
     const self = this;
 
@@ -427,12 +422,8 @@ FastDatetimePicker.prototype = {
         }
       }, false);
 
-      if (self.config.clearText) {
-        self.find('[data-role=clear]').addEventListener('click', function (e) {
-          e.preventDefault();
-          self.clear();
-        }, false);
-      }
+      self.find('[data-role=confirm]').innerText = self.config.confirmText;
+      self.find('[data-role=cancel]').innerText = self.config.cancelText;
     }
 
     showMask();
@@ -771,4 +762,4 @@ FastDatetimePicker.prototype = {
   }
 };
 
-export default FastDatetimePicker;
+export default FastDateTime;
