@@ -131,3 +131,6 @@ export default {
     cursor: pointer;
   }
 </style>
+<style lang="scss">
+  @import './style/fastDatetime';
+</style>
