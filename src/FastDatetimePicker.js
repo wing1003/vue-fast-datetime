@@ -187,6 +187,16 @@ function FastDateTime (config) {
 
   if('string' === typeof config.confirmText) this.config.confirmText = config.confirmText;
   if('string' === typeof config.cancelText) this.config.confirmText = config.cancelText;
+
+  this.triggerHandler = function (e) {
+    e.preventDefault();
+    self.show(self.startValue,self.endValue);
+  };
+
+  if (self.config.trigger) {
+    this.trigger = getElement(self.config.trigger);
+    this.trigger && this.trigger.addEventListener('click', this.triggerHandler, false)
+  }
 }
 
 FastDateTime.prototype = {
@@ -434,7 +444,7 @@ FastDateTime.prototype = {
    * @method create datetime data
    * @param type{ string }: start_date_unit ,hour ,minute;
    * */
-  _makeData (type, year, month, day, hour ,minite) {
+  _makeData (type, year, month, day, hour ,minute) {
     const config = this.config;
     const renderMap = 'start_date_unit' === type || 'start_hour' === type ||  'start_minute' === type ? START_RENDER_MAP : END_RENDER_MAP;
     const valueMap = 'start_date_unit' === type || 'start_hour' === type ||  'start_minute' === type  ? this.startValueMap : this.endValueMap;

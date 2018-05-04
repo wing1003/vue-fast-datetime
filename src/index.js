@@ -1,16 +1,12 @@
 import Datetime from './FastDatetimePicker'
 
-const libs = {
+const operate = {
   show: function (options = {}) {
-    options = Object.assign({
-      destroyOnHide: true
-    }, options);
-
-    const datetime = libs.datetime = new Datetime(options);
-    datetime.show()
+    const datetime = operate.datetime = new Datetime(options);
+    datetime.show();
   },
   hide: function () {
-    libs.datetime && libs.datetime.hide()
+    operate.datetime && operate.datetime.hide();
   }
 };
 
@@ -18,11 +14,11 @@ export default {
   install (Vue) {
     if (!Vue.FastDateTime) {
       Vue.FastDateTime = {
-        datetime: libs
+        datetime: operate
       }
     }
     else {
-      Vue.FastDateTime.datetime = libs
+      Vue.FastDateTime.datetime = operate;
     }
 
     Vue.mixin({
