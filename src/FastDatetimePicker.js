@@ -186,7 +186,7 @@ function FastDateTime (config) {
   }
 
   if('string' === typeof config.confirmText) this.config.confirmText = config.confirmText;
-  if('string' === typeof config.cancelText) this.config.confirmText = config.cancelText;
+  if('string' === typeof config.cancelText) this.config.cancelText = config.cancelText;
 
   this.triggerHandler = function (e) {
     e.preventDefault();
@@ -195,7 +195,7 @@ function FastDateTime (config) {
 
   if (self.config.trigger) {
     this.trigger = getElement(self.config.trigger);
-    this.trigger && this.trigger.addEventListener('click', this.triggerHandler, false)
+    this.trigger && this.trigger.addEventListener('click', this.triggerHandler, false);
   }
 }
 
