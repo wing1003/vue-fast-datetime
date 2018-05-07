@@ -3,6 +3,10 @@ import FastDateTimeComponent from './FastDateTime.vue';
 
 const operate = {
   show: function (options = {}) {
+    options = Object.assign({
+      destroyOnHide: true,
+      isOneInstance: true
+    }, options);
     const datetime = operate.datetime = new FastDateTime(options);
     datetime.show();
   },
