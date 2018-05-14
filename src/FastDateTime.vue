@@ -1,9 +1,10 @@
 <template>
   <div>
-    <input type="text"
+   <input type="text"
            v-model="inputDate"
            readonly="readonly"
            class="fast__input">
+    <p class="fast__text">{{inputDate}}</p>
   </div>
 </template>
 
@@ -117,18 +118,20 @@ export default {
 }
 </script>
 <style scoped>
-  input[type="text"]{
-    border: 1px solid #c3c3c3;
+  .fast__text{
+    position: relative;
+    border: 1px solid #ccc;
     height: 36px;
     line-height: 36px;
     width: 100%;
     padding: 8px;
-    max-width: 360px;
+    max-width: 300px;
     border-radius: 3px;
-    background: #fff
+    background: transparent;
+    font-size:16px;
   }
   .fast__input[readonly] {
-    cursor: pointer;
+    display: none;
   }
 </style>
 <style lang="scss">

@@ -143,9 +143,6 @@ function showMask () {
 
 function hideMask () {
   let _mask = document.querySelector('.fd-mask');
-  if(_mask){
-    _mask.style.zIndex = -1;
-  }
   if (!MASK) {
     return;
   }
