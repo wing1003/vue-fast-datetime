@@ -72,7 +72,7 @@ The component accepts these props:
 | `onShow` / `@on-show`      | `Function`         | :---:                | show the vue-fast-datetime |
 | `onHide` / `@on-hide`      | `Function`         | :---:                | hide the vue-fast-datetime |
 
-##CHANGELOG
+## CHANGELOG
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## License
