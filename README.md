@@ -54,7 +54,7 @@ The component accepts these props:
 | Attribute        | Type                                            | Default              | Description      |
 | :--------------- | :---------------------------------------------- | :------------------- | :----------------|
 | position         | String											 | `start`              | Initial the first choose time whether starttime or endtime  |
-| startDate        | Object Date                                     | -                    | The starttime of fase-datetime (required)                   |``
+| startDate        | Object Date                                     | -                    | The starttime of fase-datetime (required)                   |
 | endDate          | Object Date                                     | -                    | The endtime of fase-datetime (required)                     |
 | startValue       | String                                          | -                    | Current value of starttime,this value must be less than the starttime (required)                   |
 | endValue         | String                                          | -                    | Current value of endtime,this value must be less than the starttime (required)                   |
@@ -67,10 +67,10 @@ The component accepts these props:
 
 | name                       | type               | Default              | Description      |
 | :------------------------- | :----------------- | :------------------- | :----------------|
-| `onSelect` / `@on-change`  | `Function`         | (type, value, wholeValue) => {} | CallBack after date scroller value changed, pass three arguments, current scroller type `type` and current scroller value `value` and datetime value `wholeValue`
-| `onConfirm`                | `Function`         | (startValue, endValue) | CallBack after click confirm button,set current startValue and endValue
-| `onShow` / `@on-show`      | `Function`         | :---:                | show the vue-fast-datetime
-| `onHide` / `@on-hide`      | `Function`         | :---:                | hide the vue-fast-datetime
+| `onSelect` / `@on-change`  | `Function`         | (type, value, wholeValue) => {} | CallBack after date scroller value changed, pass three arguments, current scroller type `type` and current scroller value `value` and datetime value `wholeValue` |
+| `onConfirm`                | `Function`         | (startValue, endValue) | CallBack after click confirm button,set current startValue and endValue |
+| `onShow` / `@on-show`      | `Function`         | :---:                | show the vue-fast-datetime |
+| `onHide` / `@on-hide`      | `Function`         | :---:                | hide the vue-fast-datetime |
 
 ##CHANGELOG
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
