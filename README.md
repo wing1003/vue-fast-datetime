@@ -68,6 +68,12 @@ The component accepts these props:
 | name                       | type               | Default              | Description      |
 | :------------------------- | :----------------- | :------------------- | :----------------|
 | `onSelect` / `@on-change`  | `Function`         | (type, value, wholeValue) => {} | CallBack after date scroller value changed, pass three arguments, current scroller type `type` and current scroller value `value` and datetime value `wholeValue`
-| `onConfirm`                | `Function`         | :---:                |
-| `onShow`                   | `Function`         | :---:                |
-| `onHide`                   | `Function`         | :---:                |
+| `onConfirm`                | `Function`         | (startValue, endValue) | CallBack after click confirm button,set current startValue and endValue
+| `onShow` / `@on-show`      | `Function`         | :---:                | show the vue-fast-datetime
+| `onHide` / `@on-hide`      | `Function`         | :---:                | hide the vue-fast-datetime
+
+##CHANGELOG
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## License
+[MIT](LICENSE.txt) License
