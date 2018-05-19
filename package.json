@@ -1,6 +1,6 @@
 {
   "name": "vue-fast-datetime",
-  "version": "1.0.3",
+  "version": "1.0.3-beta.11",
   "description": "A quick select datetime picker component for vue.js",
   "main": "dist/vue-fast-datetime.js",
   "scripts": {
