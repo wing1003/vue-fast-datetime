@@ -2,9 +2,9 @@
 A quick select datetime picker component for vue.js
 
 ## DEMO HERE
-**[Go to demo](https://zeethan.github.io/#/global)**.
+**[Go to demo](https://ethanze.github.io/#/global)**.
 
-![Screen record](https://zeethan.github.io/assets/images/vue-fastdatetime-screenshot.gif)
+![Screen record](https://ethanze.github.io/assets/images/vue-fastdatetime-screenshot.gif)
 
 ## Install
 ```shell
